@@ -1,0 +1,876 @@
+* {
+
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #1c1919;
+    color: #ECF0F1;
+    overflow-x: hidden;
+
+}
+
+
+/* //////////////////////////////// PÁGINA 1 ////////////////////////////////// */
+
+/* /////////////////// Menu Superior /////////////////// */
+
+#menuSuperior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #1c1919;
+    box-shadow: 0 0 3px black;
+    display: grid;
+    align-items: center;
+    z-index: 20;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#logoImg {
+
+    position: relative;
+    left: 30px;
+    width: 175px;
+    height: auto;
+    bottom: 9px;
+
+}
+
+#logoImg:hover {
+
+    cursor: pointer;
+}
+
+#itensDireita {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.iconeDireita {
+
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 90% 10%;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+
+}
+
+.iconeDireita p {
+
+    padding-top: 8px;
+}
+
+.iconeDireita:hover {
+    cursor: pointer;
+}
+
+#barraDiv {
+    position: relative;
+    /* Alterado para relative */
+}
+
+#lupa {
+
+    position: relative;
+    right: 30px;
+    cursor: pointer;
+}
+
+#barraDePesquisa {
+
+    width: 420px;
+    height: 35px;
+    background-color: #1c1919;
+    box-shadow: 10px black;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid #968700 1px;
+    color: #ECF0F1;
+    text-align: center;
+
+}
+
+#barraDePesquisa::placeholder {
+
+    text-align: center;
+    color: #b0aaaa;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#barraDePesquisa:focus {
+
+    outline: none;
+    border-bottom: solid 1.5px #ECD504;
+    transition: 0.1s;
+
+}
+
+#barraDePesquisa:focus::placeholder {
+
+    color: #1c1919;
+    transition: 0.3s;
+}
+
+#barraPesquisaList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #1c1919;
+    max-height: 300px;
+    overflow-y: hidden;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 420px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#barraPesquisaList li button {
+    background-color: transparent;
+    padding: 5px;
+    font-size: 15px;
+    color: #b0aaaa;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+}
+
+#barraPesquisaList li button:hover {
+    background-color: #232121;
+}
+
+.btnHidden {
+    display: none;
+}
+
+#fotoPerfil {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+
+#nomeUser {
+    padding: 0;
+}
+
+/* //////////////////////// Menu Superior end //////////////////////// */
+
+/* ///////////////////////// Foto Banner ////////////////////////// */
+
+#fotoInicial {
+    margin-top: 90px;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 45px;
+    position: relative;
+}
+
+.slides {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    width: 100%;
+    height: 500px;
+}
+
+.slides img {
+    width: 100%;
+    min-height: 500px;
+    max-height: 500px;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* /////////////////////// Foto Banner end /////////////////////// */
+
+/*  ////////////////////////////// Grade de Produtos ///////////////////////*/
+
+.tagGrade {
+
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+
+}
+
+.imageScrollConteiner {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 5% 90% 5%;
+}
+
+.imageScrollLeft,
+.imageScrollRight {
+    display: flex;
+    align-items: center;
+    color: #b0aaaa;
+    width: 100%;
+    font-size: 20px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.imageScrollLeft:hover,
+.imageScrollRight:hover {
+    color: white;
+}
+
+.gradeContainer {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+
+}
+
+.produtoGrade {
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: 62% 16% auto;
+    height: 400px;
+    min-width: 270px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.produtoGrade:hover {
+    background-color: #302d2d;
+}
+
+.produtoGrade:last-child {
+    margin-right: 0;
+}
+
+.imgGradeContainer {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.imgGrade {
+
+    height: 90%;
+    width: auto;
+    border-radius: 10px;
+
+}
+
+.tituloGrade {
+
+    font-size: 20px;
+    max-width: 220px;
+
+}
+
+.precoGrade {
+
+    display: flex;
+    font-size: 16.5px;
+    text-align: left;
+    padding-top: 6px;
+
+
+}
+
+.r4 {
+    margin-right: 4px;
+}
+
+/* //////////////////// Grade de Produtos /end/ ////////////////// */
+
+/* ////////////////////////////////// PÁGINA 2 ////////////////////////////// */
+
+/* //////////////////// Produto principal //////////////////// */
+
+#mainGrid {
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.colunaUm {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 13% 85%;
+    column-gap: 2%;
+}
+
+.colunaDois {
+
+    padding: none;
+    margin: none;
+
+}
+
+.produtoTexto {
+
+    max-width: 95%;
+    margin-top: 18.5px;
+
+}
+
+.produtoTitulo {
+
+    font-size: 38px;
+}
+
+.tituloPreco {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.produtoPreco {
+
+    font-size: 28px;
+    color: #ECD504;
+    margin-top: 5px;
+
+}
+
+.botaoFrete {
+
+    height: 35px;
+    width: 140px;
+    background-color: #b5a516;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    color: white;
+    margin-right: 75px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.botaoFrete:hover {
+
+    animation: pulse 1s;
+}
+
+.quantidade {
+
+    height: 70px;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: flex;
+
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.quantidadeSeletor {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5px;
+    height: 45px;
+    width: 140px;
+    border: white 1px solid;
+    margin-left: 4px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.quantidadeSeletor div {
+
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    width: 20px;
+    cursor: pointer;
+
+}
+
+
+.quantidadeSeletor p {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+
+}
+
+#quantCompraInput {
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+
+.botaoCompra {
+
+    height: 45px;
+    width: 180px;
+    margin-top: 5.5px;
+    margin-left: 20px;
+    background-color: #ECD504;
+    border: solid 1.5px white;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+
+}
+
+.botaoCompra:hover {
+
+    animation: pulse 1s;
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#hiddenBandBtn {
+    display: none;
+}
+
+.bandaDesc {
+    height: 55%;
+    width: 85%;
+    display: grid;
+    grid-template-rows: 20% 80%;
+
+}
+
+.bandaDescNome {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bandaInfo {
+    display: flex;
+}
+
+.fotoBanda {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    margin-right: 20px;
+}
+
+.bandaSobre {
+    height: 90%;
+    width: 100%;
+    overflow: auto;
+    background-color: #302d2d;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 10% 88%;
+    row-gap: 2%;
+    margin-top: 10px;
+}
+
+.bandaSobre h3 {
+    font-size: 20px;
+    margin: 5px 0 0 10px;
+}
+
+.bandaSobre p {
+
+    margin-left: 10px;
+}
+
+.produtoFoto {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    max-height: 500px;
+
+}
+
+.productPageImageScrollConteiner {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+}
+
+.otherImagesContainer {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 440px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.imageScrollUp,
+.imageScrollDown {
+    position: absolute;
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+    height: 30px;
+    color: black;
+    text-align: center;
+}
+
+.imageScrollUp:hover,
+.imageScrollDown:hover {
+    background-color: rgba(218, 218, 218, 0.8);
+}
+
+.imageScrollUp {
+    top: 0;
+}
+
+.imageScrollDown {
+    bottom: 0;
+}
+
+.otherImages {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.otherImageSelected {
+    border: #ECD504 3px solid;
+    border-right: #ECD504 3px solid;
+
+}
+
+.imgMagnifierGlass {
+    position: absolute;
+    border: 3px solid #000;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 100px;
+    height: 100px;
+}
+
+.imgMagnifierContainer {
+    position: relative;
+}
+
+.produtoDescricao {
+
+    width: 92%;
+    height: auto;
+    margin-left: 30px;
+    background-color: #302d2d;
+    margin-top: 25px;
+    border-radius: 25px;
+    padding-top: 0.5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+}
+
+.descricaoTitulo {
+
+    color: #ECD504;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.produtoDescricao p {
+
+    margin-left: 25px;
+}
+
+/* ////////////////// produto principal end //////////////////// */
+
+/* ///////////////// recomendações de grade //////////////////// */
+
+
+.maisProdutos {
+
+    height: 400px;
+    width: 100%;
+}
+
+.maisPTitulo {
+
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.maisPTitulo p {
+
+    border-bottom: 1.5px white solid;
+    max-width: 450px;
+    display: inline-block;
+}
+
+/* ///////////////// recomendações de grade end ////////////////// */
+
+/* ///////////////// Fim da página info //////////////////// */
+
+.infoFimPag {
+
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 100%;
+    height: 250px;
+    padding-top: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #232121;
+    margin-top: 45px;
+
+}
+
+
+.listaCatTitulo {
+
+    border-bottom: 1.5px rgb(95, 92, 92) solid;
+    max-width: 90%;
+
+}
+
+.listaCategoriasEnd {
+
+    list-style-type: none;
+    margin-left: -30px;
+    font-size: 13px;
+}
+
+.listaCategoriasEnd button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.colunaUmEnd {
+
+    grid-column: 1;
+    padding-left: 25px;
+
+}
+
+.colunaUmEnd li {
+
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 42px;
+
+}
+
+.colunaUmEnd ul {
+
+    cursor: pointer;
+
+
+}
+
+.logoEnd {
+
+    width: 250px;
+    height: auto;
+    margin-bottom: 15px;
+
+}
+
+
+.colunaDoisEnd {
+
+    grid-column: 2;
+    padding-left: 25px;
+
+}
+
+.colunaDoisEnd ul {
+
+    cursor: pointer;
+}
+
+.colunaDoisEnd li {
+
+    margin-left: 42px;
+}
+
+.colunaTresEnd {
+
+
+    grid-column: 3;
+}
+
+.colunaTresEnd li {
+
+    margin-left: 42px;
+}
+
+.colunaQuatroEnd {
+
+    grid-column: 4;
+}
+
+.colunaQuatroEnd li {
+
+    margin-left: 42px;
+}
+
+
+
+/* //////////////// Fim da página info end ///////////// */
+/*//////////////// Caixa de calculo de frete ////////// */
+#calculaFreteContainer {
+    position: fixed;
+    background-color: #302d2d;
+    width: 30%;
+    height: 30%;
+    left: 35%;
+    top: 35%;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+}
+
+#freteInput {
+    width: 70%;
+    height: 10px;
+    padding: 10px;
+    margin: 25px;
+    border: none;
+    border-bottom: 1px solid #968700;
+    background-color: transparent;
+    color: white;
+    transition: 0.5s;
+    text-align: center;
+}
+
+#calculaFreteBottom {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 30px 0 30px;
+}
+
+#calculaFreteContainer button {
+    height: 35px;
+    width: 140px;
+    background-color: #b5a516;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+#CEPmsg {
+    color: red;
+    font-size: 15px;
+    display: none;
+}
+
+/* //////////////////// Página de Pesquisa ///////////////////// */
+
+.gradeMainDiv {
+
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 200px auto;
+    column-gap: 30px;
+    padding-left: 30px;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.gradeMainDiv:hover {
+    background-color: #302d2d;
+}
+
+#paginaPesquisaForm {
+    margin-top: 90px;
+}
+
+.pesquisaFotoContainer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.pesquisaFoto {
+    width: auto;
+    height: 180px;
+    border-radius: 10px;
+}
+
+.pesquisaColunaDois {
+    margin: 15px 0 60px 0;
+}
+
+.pesquisaColunaDois h3 {
+    color: #ECD504;
+    font-size: 23px;
+}
+
+.colunaDoisBanda {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.colunaDoisBanda img {
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    margin-right: 10px;
+}

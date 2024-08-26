@@ -1,0 +1,914 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+    background-color: #1c1919;
+}
+
+/* /////////////////// Menu Superior /////////////////// */
+
+#menuSuperior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #000000;
+    box-shadow: 0 0 3px black;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#logoImg {
+
+    position: relative;
+    left: 30px;
+    width: 175px;
+    height: auto;
+    bottom: 9px;
+
+}
+
+#logoImg:hover {
+
+    cursor: pointer;
+}
+
+#itensDireita {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.iconeDireita {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 90% 10%;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+
+}
+
+.iconeDireita p {
+
+    padding-top: 8px;
+}
+
+.iconeDireita:hover {
+    cursor: pointer;
+}
+
+#barraDiv {
+    position: relative;
+    /* Alterado para relative */
+}
+
+#lupa {
+    position: relative;
+    left: 400px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+#barraDePesquisa {
+
+    width: 420px;
+    height: 35px;
+    background-color: #000000;
+    box-shadow: 10px black;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid #968700 1px;
+    color: #ECF0F1;
+    text-align: center;
+
+}
+
+#barraDePesquisa::placeholder {
+
+    text-align: center;
+    color: #b0aaaa;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#barraDePesquisa:focus {
+
+    outline: none;
+    border-bottom: solid 1.5px #ECD504;
+    transition: 0.1s;
+
+}
+
+#barraDePesquisa:focus::placeholder {
+
+    color: #1c1919;
+    transition: 0.3s;
+}
+
+#barraPesquisaList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    max-height: 300px;
+    overflow-y: hidden;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 420px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 50;
+}
+
+#barraPesquisaList li button {
+    background-color: transparent;
+    padding: 5px;
+    font-size: 15px;
+    color: #b0aaaa;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+}
+
+#barraPesquisaList li button:hover {
+    background-color: #232121;
+}
+
+.btnHidden {
+    display: none;
+}
+
+#fotoPerfil {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+
+#nomeUser {
+    padding: 0;
+}
+
+/* //////////////////////// Menu Superior end //////////////////////// */
+
+#barraCima {
+    position: fixed;
+    top: 0;
+    z-index: 25;
+    width: 100%;
+}
+
+.barraCimaBtnContainer {
+    position: relative;
+    top: 85px;
+    width: 100%;
+    height: 35px;
+    display: grid;
+    grid-template-columns: 5px 1fr 5px 1fr 5px 1fr 5px 1fr 5px 1fr 5px 1fr 5px 1fr 5px 1fr 5px 1fr 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.espacoBtns {
+    background-color: black;
+    border-bottom: 2px solid #ECD504;
+}
+
+.barraCimaBtn {
+    display: flex;
+    background-color: black;
+    border-top: 2px solid #968700;
+    border-left: 2px solid #968700;
+    border-right: 2px solid #968700;
+    border-bottom: 2px solid #ECD504;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #646464;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.barraCimaSelectedBtn {
+    display: flex;
+    border-top: 2px solid #ECD504;
+    border-left: 2px solid #ECD504;
+    border-right: 2px solid #ECD504;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    background-color: #1c1919;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.barraCimaSelectedBtn:hover {
+    border-top: 2px solid #ffe600;
+    border-left: 2px solid #ffe600;
+    border-right: 2px solid #ffe600;
+}
+
+.barraCimaBtnContainer .barraCimaBtn:hover {
+    border: 2px solid #ffe600 !important;
+    color: #b1b1b1 !important;
+}
+
+.barraCimaBtn i {
+    margin-right: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #494949;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+.selectList::-webkit-scrollbar-track {
+    background-color: #383838;
+}
+
+::-moz-scrollbar {
+    width: 12px;
+}
+
+::-moz-scrollbar-thumb {
+    background-color: #494949;
+}
+
+::-moz-scrollbar-track {
+    background-color: transparent;
+}
+
+#barraLateralBotttom {
+    margin: 30px;
+}
+
+#menuInicialBtn {
+    color: #b3b3b3;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px 30px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#menuInicialBtn span {
+    font-size: 30px;
+}
+
+#menuInicialBtn:hover {
+    color: #ECF0F1;
+}
+
+.barraItemContainer {
+    transition: 0.3s;
+}
+
+.barraItemTitle {
+    color: #b3b3b3;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.barraItemTitle:hover {
+    color: #ECF0F1;
+}
+
+.barraItemContainer:hover .barraItemTitle {
+    color: #ECF0F1;
+}
+
+.barraItemList {
+    color: #b3b3b3;
+    list-style: none;
+    margin: 0 0 15px 15px;
+    font-size: 15px;
+    height: 0;
+    overflow: hidden;
+}
+
+.barraItemList li {
+    cursor: pointer;
+}
+
+.barraItemList li:hover {
+    color: #ECF0F1;
+}
+
+.contentConteiner {
+    margin-top: 115px;
+    padding: 30px;
+    background-color: #1c1919;
+
+}
+
+#topContentDg {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-template-rows: 30px 300px;
+    column-gap: 2%;
+
+}
+
+.grafico {
+    border: 1px solid #968700;
+    border-radius: 5px;
+    background-color: #383838;
+    max-width: 100%;
+    max-height: 100%;
+    transition: 0.3s;
+    padding: 5px;
+}
+
+#ultimasVendasList {
+    height: 100%;
+    width: 100%;
+}
+
+.selectList {
+    border: 1px solid #968700;
+    background-color: #383838;
+    border-radius: 5px;
+    transition: 0.3s;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.grafico:hover,
+.selectList:hover {
+    border: 1px solid #ffe600;
+}
+
+#bottomContentDg {
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    grid-template-rows: 25px 250px;
+    column-gap: 2%;
+}
+
+#cadastroProdutoForm {
+    display: grid;
+    grid-template-rows: 100px 300px 320px;
+    row-gap: 20px;
+    padding: 10px 70px 70px 70px;
+}
+
+textarea {
+    resize: none;
+    border-radius: 5px;
+}
+
+#categoriaNameInput,
+#cadastroProdutoForm input,
+#cadastroProdutoForm select {
+    margin-bottom: 5px;
+    border: #968700 1px solid;
+    background-color: #232121;
+    color: #b3b3b3;
+    height: 30px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#cadastroProdutoForm textarea,
+#cadastroBandaForm textarea {
+    margin-bottom: 5px;
+    width: 100%;
+    height: 270px;
+    border: #968700 1px solid;
+    background-color: #232121;
+    color: #b3b3b3;
+}
+
+#productCategoriaInput,
+#productBandaInput {
+    width: 100%;
+}
+
+.bigImgOutput {
+    width: 100%;
+    height: 100%;
+    max-width: 320px;
+    max-height: 320px;
+    border: #FFD43B 2px solid;
+    border-radius: 5px;
+}
+
+#selectListProdutos,
+#selectListBandas {
+    width: 100%;
+    height: 395px;
+
+}
+
+#historicoVendasList {
+    width: 100%;
+    height: 455px;
+}
+
+#selectListFunc {
+    width: 100%;
+    height: 205px;
+}
+
+#selectListCategorias {
+    width: 25%;
+    height: 155px;
+}
+
+#selectListGenero {
+    width: 20%;
+    height: 155px;
+}
+
+#selectListCargos {
+    width: 90%;
+    height: 355px;
+}
+
+#listaClientesList {
+    height: 600px;
+}
+
+.selectListTop {
+    width: 100%;
+    height: 35px;
+    position: sticky;
+    background-color: #231F20;
+    z-index: 20;
+    top: 0;
+}
+
+.selectListColumnName {
+    display: flex;
+    font-size: 13px;
+    border: 1px solid #383838;
+    color: #e1e1e1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectListGridProdutos {
+    display: grid;
+    grid-template-columns: 20% 30% 10% 10% 10% 10% 5% 5%;
+    cursor: pointer;
+}
+
+.selectListUltimasVendas {
+    display: grid;
+    grid-template-columns: 25% 20% 13.75% 13.75% 13.75% 13.75%;
+}
+
+.selectListGridCategorias {
+    display: grid;
+    grid-template-columns: 40% 20% 20% 20%;
+    cursor: pointer;
+}
+
+.selectListGridBandas {
+    display: grid;
+    grid-template-columns: 25% 50% 20% 5%;
+    cursor: pointer;
+}
+
+.selectListGridGenero {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    cursor: pointer;
+}
+
+.selectListGridCargos {
+    display: grid;
+    grid-template-columns: 25% 15% 15% 15% 15% 15%;
+    cursor: pointer;
+}
+
+.selectListGridFunc {
+    display: grid;
+    grid-template-columns: 20% 20% 15% 10% 10% 10% 10%;
+    cursor: pointer;
+}
+
+.historicoVendasGrid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.listaClientesGrid {
+    display: grid;
+    grid-template-columns: 35% 35% 15% 15%;
+    cursor: pointer;
+}
+
+.selectListRow {
+    width: 100%;
+    height: 20px;
+    background-color: #4b4b4b;
+}
+
+.selectListItem {
+    display: flex;
+    font-size: 11px;
+    border: 1px solid #383838;
+    color: #b1b1b1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.radioHidden,
+.radioOpt,
+.handleOpt {
+    display: none;
+}
+
+.radioHidden:checked+label {
+    background-color: #646464;
+}
+
+.senhaView {
+    display: flex;
+    position: relative;
+    margin-left: 20px;
+}
+
+.senhaView input[type="button"] {
+    width: 12px;
+    height: 12px;
+    background-color: #231F20;
+    border-radius: 100%;
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    cursor: pointer;
+    border-color: #968700;
+    border-width: 2px;
+    appearance: none;
+}
+
+.selectListBottomDg {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+h3,
+h4 {
+    color: #b1b1b1;
+}
+
+#listaClientes {
+    display: grid;
+    grid-template-columns: 58% 40%;
+    column-gap: 2%;
+}
+
+#clientesGraficoContainer {
+    display: grid;
+    grid-template-rows: 25px 290px 25px 250px;
+    width: 100%;
+}
+
+.clientesGraficos {
+    max-height: 100%;
+}
+
+#cargosCheckboxContainer {
+    display: grid;
+    grid-template-rows: repeat(2, 30px);
+    grid-template-columns: repeat(2, 600px);
+    width: 600px;
+    height: 60px;
+    border: 1px solid #968700;
+    background-color: #383838;
+    padding: 10px;
+    border-radius: 5px;
+    color: #e1e1e1;
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+}
+
+.cargosCheckboxLabelContainer input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.cargosCheckboxLabelContainer {
+    display: flex;
+
+}
+
+.imageScrollConteiner {
+    height: 320px;
+    overflow-y: hidden;
+    position: relative;
+    border: #FFD43B 1px solid;
+    border-radius: 5px;
+}
+
+.imageScrollUp,
+.imageScrollDown {
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+    height: 30px;
+    color: #FFD43B;
+    text-align: center;
+}
+
+.imageScrollUp:hover,
+.imageScrollDown:hover {
+    background-color: rgba(48, 48, 48, 0.7);
+}
+
+.otherImagesContainer {
+    height: 260px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.imageCheckboxContainer {
+    position: relative;
+    margin-bottom: 1px;
+}
+
+.otherImages {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.imageCheckbox {
+    position: absolute;
+    top: 5px;
+    left: 40px;
+    z-index: 1;
+    cursor: pointer;
+    display: none;
+}
+
+.imageCheckbox:checked {
+    display: block;
+}
+
+
+.imageCheckboxContainer:hover .imageCheckbox {
+    display: block;
+}
+
+.productImagesConteiner {
+    display: grid;
+    grid-template-columns: 60px 645px;
+    column-gap: 15px;
+}
+
+.newImageContainer {
+    position: relative;
+    margin-bottom: 1px;
+    border: 2px solid #1900ff;
+}
+
+.zoomContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 320px 320px;
+    column-gap: 15px;
+    height: 320px;
+}
+
+.imgZoomLens {
+    position: absolute;
+    border: 2px solid #FFD43B;
+    border-radius: 2px;
+    width: 40px;
+    height: 40px;
+}
+
+.imgZoomResult {
+    border: 2px solid #FFD43B;
+    max-width: 320px;
+    max-height: 320px;
+    border-radius: 5px;
+}
+
+.fotoPerfilOutput {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+#cadastroBandaForm {
+    display: grid;
+    grid-template-columns: 300px 385px;
+
+}
+
+.imagesConteiner {
+    display: grid;
+    grid-template-columns: 60px 320px;
+    column-gap: 5px;
+}
+
+.formBtnsContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.radioSelectArea {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    height: 100%;
+    align-items: center;
+}
+
+.selectListSearchBtn,
+.radioSelectLabel,
+.imageInputLabel {
+    background-color: #303030;
+    color: #FFD43B;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#updateLabel {
+    padding: 15px 15px 15px 20px;
+}
+
+#insertLabel {
+    padding: 15px 20px 15px 15px;
+}
+
+.handleOpt:checked+label {
+    background-color: #FFD43B;
+    color: #303030;
+}
+
+.productMiddleForm {
+    display: grid;
+    grid-template-columns: 65% 30%;
+    column-gap: 5%;
+}
+
+.formSubmitBtn {
+    background-color: #303030;
+    color: #61b431;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 15px 20px 15px 20px;
+    border: none;
+}
+
+.formSubmitBtn:active {
+    background-color: #61b431;
+    color: #303030;
+}
+
+.formSubmitBtn:hover {
+    background-color: #61b431;
+    color: #303030;
+}
+
+.deleteCheckboxLabel {
+    background-color: #303030;
+    color: #6a040f;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 15px 20px 15px 20px;
+}
+
+.deleteCheckbox {
+    display: none;
+}
+
+.deleteCheckbox:checked+label {
+    background-color: #6a040f;
+    color: #303030;
+}
+
+.deleteCheckboxLabel:hover {
+    background-color: #6a040f;
+    color: #303030;
+}
+
+
+.imageInputLabel {
+    padding: 15px 20px 15px 20px;
+}
+
+.selectListSearchBtn:hover,
+.imageInputLabel:hover,
+.radioSelectLabel:hover {
+    background-color: #FFD43B;
+    color: #303030;
+}
+
+#productImageInput,
+#bandaPerfilImageInput {
+    display: none;
+}
+
+#productFormBottom {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 29% 71%;
+    align-items: center;
+}
+
+.imageInputLabelContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#productListContainer,
+#categoriaListContainer {
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+
+
+.selectListSearchBtn:active {
+    background-color: #FFD43B;
+    color: #303030;
+}
+
+#productListContainer .selectListSearchBtn {
+    padding: 15px;
+    margin: 165px 25px 165px 25px;
+    border: none;
+}
+
+.mensagem {
+    margin-left: 60px;
+}
+
+#cadastroCategoriaForm {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 20px;
+}
+
+#cadastroCategoriaForm input[type="text"] {
+    margin-top: 20px;
+}
+
+#categoriaListContainer {
+    align-items: center;
+    margin-left: 400px;
+    width: 100%;
+}
+
+#categoriaListContainer .selectListSearchBtn {
+    border: none;
+    padding: 10px;
+    margin: 0 30px 0 30px;
+}

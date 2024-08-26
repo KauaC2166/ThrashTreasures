@@ -1,0 +1,406 @@
+/*tira o padding e margin automatica da pagina*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*fonte utilizada na pagina*/
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*animação do backgroud*/
+@keyframes mudaBackground {
+    0% {
+        background-image: linear-gradient(0deg, #363100, #381D2A);
+    }
+
+    4.16% {
+        background-image: linear-gradient(15deg, #363100, #381D2A);
+    }
+
+    8.32% {
+        background-image: linear-gradient(30deg, #363100, #381D2A);
+    }
+
+    12.48% {
+        background-image: linear-gradient(45deg, #363100, #381D2A);
+    }
+
+    16.64% {
+        background-image: linear-gradient(60deg, #363100, #381D2A);
+    }
+
+    20.8% {
+        background-image: linear-gradient(75deg, #363100, #381D2A);
+    }
+
+    24.96% {
+        background-image: linear-gradient(90deg, #363100, #381D2A);
+    }
+
+    29.12% {
+        background-image: linear-gradient(105deg, #363100, #381D2A);
+    }
+
+    33.28% {
+        background-image: linear-gradient(120deg, #363100, #381D2A);
+    }
+
+    37.44% {
+        background-image: linear-gradient(135deg, #363100, #381D2A);
+    }
+
+    41.6% {
+        background-image: linear-gradient(150deg, #363100, #381D2A);
+    }
+
+    45.76% {
+        background-image: linear-gradient(165deg, #363100, #381D2A);
+    }
+
+    49.92% {
+        background-image: linear-gradient(180deg, #363100, #381D2A);
+    }
+
+    54.08% {
+        background-image: linear-gradient(195deg, #363100, #381D2A);
+    }
+
+    58.24% {
+        background-image: linear-gradient(210deg, #363100, #381D2A);
+    }
+
+    62.4% {
+        background-image: linear-gradient(225deg, #363100, #381D2A);
+    }
+
+    66.56% {
+        background-image: linear-gradient(240deg, #363100, #381D2A);
+    }
+
+    70.72% {
+        background-image: linear-gradient(255deg, #363100, #381D2A);
+    }
+
+    74.88% {
+        background-image: linear-gradient(270deg, #363100, #381D2A);
+    }
+
+    79.04% {
+        background-image: linear-gradient(285deg, #363100, #381D2A);
+    }
+
+    83.2% {
+        background-image: linear-gradient(300deg, #363100, #381D2A);
+    }
+
+    87.36% {
+        background-image: linear-gradient(315deg, #363100, #381D2A);
+    }
+
+    91.52% {
+        background-image: linear-gradient(330deg, #363100, #381D2A);
+    }
+
+    95.68% {
+        background-image: linear-gradient(345deg, #363100, #381D2A);
+    }
+
+    99.84% {
+        background-image: linear-gradient(360deg, #363100, #381D2A);
+    }
+
+    100% {
+        background-image: linear-gradient(15deg, #363100, #381D2A);
+    }
+
+}
+
+/*o background*/
+#loginPage {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #ECF0F1;
+    animation-name: mudaBackground;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+/*a caixa de input*/
+.loginBox {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    width: 800px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/*o lado esquerdo da caixa de input*/
+.loginBoxLeft {
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/*os backgrounds do lado esquerdo da caixa de input*/
+.backgroundImagemA {
+    background-image: url("loginImg1.png");
+}
+
+.backgroundImagemB {
+    background-image: url("loginImg2.png");
+}
+
+/*o lado direito da caixa de input*/
+.loginBoxRight {
+    background-color: #231F20;
+    padding: 30px;
+    text-align: center;
+    height: 440px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    justify-content: center;
+}
+
+/*titulo da pagina de login e de recuperação de senha*/
+#lostPasswordTitle,
+#loginTitle {
+    margin: 100px 0 20px 15px;
+    text-align: left;
+}
+
+/*mensagem de erro*/
+.error {
+    color: #fd1f1f;
+    text-align: left;
+    font-size: 13px;
+    margin-left: 20px;
+}
+
+/*estilo dos inputs*/
+.loginBoxRight input[type="date"],
+.loginBoxRight input[type="email"],
+.loginBoxRight input[type="text"],
+.loginBoxRight input[type="password"] {
+    width: 280px;
+    height: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #968700;
+    background-color: transparent;
+    color: white;
+    transition: 0.5s;
+}
+
+.loginBoxRight input::placeholder {
+    color: #cccccc;
+}
+
+.loginBoxRight input[type="date"]:focus,
+.loginBoxRight input[type="email"]:focus,
+.loginBoxRight input[type="text"]:focus,
+.loginBoxRight input[type="password"]:focus {
+    outline: none;
+    border-bottom: 1px solid #ECD504;
+
+}
+
+/*input de senha*/
+.senhaView {
+    display: flex;
+    position: relative;
+    margin-left: 20px;
+}
+
+.senhaView input[type="button"] {
+    width: 12px;
+    height: 12px;
+    background-color: #231F20;
+    border-radius: 100%;
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    cursor: pointer;
+    border-color: #968700;
+    border-width: 2px;
+    appearance: none;
+}
+
+/*estilo dos "links"*/
+#checkboxBox b,
+#reEnviarBtn b,
+#lostPasswordBtn {
+    color: #3498db;
+    text-decoration: underline;
+    font-size: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#lostPasswordBtn {
+    width: 100%;
+    padding: 0;
+    background-color: initial;
+}
+
+#reEnviarBtn {
+    font-size: 12px;
+}
+
+
+#voltaPaginaInicialBtn,
+#fazerLoginBtn,
+#createContaBtn b {
+    color: #3498db;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#voltaPaginaInicialBtn:hover,
+#checkboxBox b:hover,
+#fazerLoginBtn:hover,
+#reEnviarBtn b:hover,
+#lostPasswordBtn:hover,
+#createContaBtn b:hover {
+    color: #41b2fd;
+}
+
+/*botão de criar conta*/
+#createContaBtn {
+    font-size: 15px;
+    position: relative;
+    top: 100px;
+}
+
+/*botões*/
+.loginBoxRight button,
+input[type="submit"] {
+    width: 100px;
+    padding: 10px;
+    background-color: #ECD504;
+    color: #231F20;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.loginBoxRight button:hover,
+input[type="submit"]:hover {
+    background-color: #d4bf00;
+}
+
+/*titulo da pagina de criar conta*/
+#createContaTitle {
+    margin: 0 0 20px 15px;
+    text-align: left;
+}
+
+/*input e output de imagem de perfil*/
+#imageContainer {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+#perfilIcon,
+#perfilImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#perfilIcon {
+    font-size: 50px;
+    color: #ffffff;
+    margin-top: 40px;
+}
+
+#perfilImage {
+    display: none;
+    border-radius: 100%;
+}
+
+#userPerfilImageInput {
+    display: none;
+}
+
+/*checkbox dos termos de serviço*/
+#checkboxBox {
+    display: flex;
+    font-size: 12px;
+    margin: 0 0 10px 30px;
+}
+
+#termosCheckbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #231F20;
+    border-color: #968700;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+}
+
+#termosCheckbox:checked {
+    border-color: #ECD504;
+    background-color: #968700;
+}
+
+/*tira o botão do calendario dos inputs tipo date*/
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/*texto da pagina de recuperação de senha*/
+.lostPasswordTxt {
+    font-size: 13px;
+    text-align: left;
+    margin: 20px;
+}
+
+/*a div dos inputs do 'codigo de verificação' (minha parte favorita de toda essa parte de login)*/
+#codeInput {
+    display: grid;
+    grid-template-columns: 20px 20px 20px 20px 20px 20px;
+    column-gap: 30px;
+    margin-left: 20px;
+}
+
+/*os inputs do 'codigo de verificação'*/
+#codeInput input {
+    width: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/*o icone de check do pultima pagina de recuperação de senha*/
+#newPasswordMsgIcon {
+    font-size: 70px;
+    margin-top: 150px;
+}
+
+
+/*o titulo da ultima pagina de recuperação de senha*/
+#lostPasswordMsgTitle {
+    margin: 10px 0 10px 0;
+}
