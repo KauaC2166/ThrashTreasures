@@ -12,4 +12,6 @@
   <li>SQL</li>
 </ul>
 
+<p>Back-end feito por Kauã Costa</p>
+<p>Front-end feito por Murilo Carvalho</p>
 <p>Feito entre 12/2023 e 02/2024</p>
